@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:instagram_clone_flutter/screens/signup.dart';
+import 'package:instagram_clone_flutter/services/auth_services.dart';
 class LoginScreen extends StatefulWidget {
   static final id='login_screen';
   @override
@@ -13,8 +14,8 @@ class _LoginScreenState extends State<LoginScreen> {
   _submit(){
     if(_formKey.currentState.validate()){
       _formKey.currentState.save();
-      print(_email);
       print(_password);
+     AuthServices.signIn(context, _email, _password);
     }
   }
 
@@ -43,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 30),
                       child: TextFormField(
                         decoration:InputDecoration(
                           labelText: "Email"
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onSaved: (input)=>_email=input,
                       ),
                     ),Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 30),
+                        padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 30),
                         child: TextFormField(
                           decoration:InputDecoration(
                               labelText: "Password"
