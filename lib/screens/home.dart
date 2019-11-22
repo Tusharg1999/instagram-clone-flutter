@@ -8,6 +8,8 @@ import '../screens/home-screen-pages/search.dart';
 
 class HomeScreen extends StatefulWidget {
   static final id = 'home_screen';
+   final String userId;
+  HomeScreen({this.userId});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -23,7 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _pageController = PageController();
   }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -91,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Search(),
             Camera(),
             NotificationPage(),
-            Profile(),
+            Profile(userId: widget.userId,),
           ],
           onPageChanged: (int index) {
             setState(() {
