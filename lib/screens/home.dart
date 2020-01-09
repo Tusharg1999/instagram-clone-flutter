@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../services/auth_services.dart';
 import '../screens/home-screen-pages/activity.dart';
 import '../screens/home-screen-pages/camera.dart';
 import '../screens/home-screen-pages/notification.dart';
-import '../screens/home-screen-pages/profile.dart';
+import 'home-screen-pages/profile/profile.dart';
 import '../screens/home-screen-pages/search.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:instagram_clone_flutter/screens/signup.dart';
 import 'package:instagram_clone_flutter/services/auth_services.dart';
 class LoginScreen extends StatefulWidget {
@@ -21,12 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.white, // navigation bar color
-      statusBarColor: Colors.white,
-      systemNavigationBarIconBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.dark// status bar color
-    ));
     return SafeArea(
       child:Scaffold(
         backgroundColor: Colors.white,

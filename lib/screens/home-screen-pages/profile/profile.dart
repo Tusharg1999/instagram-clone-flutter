@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../../utility/userutility.dart';
-import '../../models/usermodel.dart';
+import 'package:instagram_clone_flutter/screens/home-screen-pages/profile/editprofile.dart';
+import '../../../utility/userutility.dart';
+import '../../../models/usermodel.dart';
+import './editprofile.dart';
 
 class Profile extends StatefulWidget {
   final String userId;
@@ -146,6 +148,7 @@ class _ProfileState extends State<Profile> {
                         border: Border.all(color: Colors.black12),
                       ),
                       child: FlatButton(
+                        onPressed:()=>Navigator.push(context,MaterialPageRoute(builder: (_)=>EditProfile(user))),
                         child: Text(
                           "Edit Profile",
                           style: TextStyle(color: Colors.black),

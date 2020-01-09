@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import './screens/home.dart';
 import './screens/login.dart';
 import './screens/signup.dart';
@@ -20,9 +21,18 @@ class Main extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.white, // navigation bar color
+        statusBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark// status bar color
+    ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryIconTheme: IconThemeData(
+          color: Colors.black
+        ),
         primaryColor: Colors.blue,
         accentColor: Colors.grey
       ),
